@@ -1,0 +1,615 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    margin:0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 500px;
+    height: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.names{
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.center{
+    width: 500px;
+}
+
+input:not(.file){
+    margin-bottom: 5px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.names input{
+    padding: 5px;
+    outline: none;
+    width: 240px;
+}
+
+.show{
+    position: absolute;
+    transform: translate(-30px);
+    font-size: 25px;
+    color: #000000;
+}
+
+.show:hover{
+    color: #333;
+}
+
+.show-eye{
+    display: none;
+}
+
+.hide-eye{
+    display: none;
+}
+
+.show-eye.active{
+    display: block;
+}
+
+.hide-eye.active{
+    display: block;
+}
+
+.form input:not(.names input,.submit){
+    width: 500px;
+    padding: 5px;
+    outline: none;
+}
+
+.input .submit{
+    width: 200px;
+    padding: 8px;
+    border: none;
+    color: white;
+    background-color: royalblue;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.main-chat{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Main.html file styling */
+
+.main{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.side{
+    width: 450px;
+    height: 100vh;
+    box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transform: translateX(0px);
+    transition: 300ms ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: white;
+}
+
+.side.active{
+    transform: translateX(-450px);
+}
+
+.hide-btn{
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    left: 450px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+.header{
+    width: 450px;
+    height: 70px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.input .logout{
+    border: none;
+    padding: 10px;
+    width: 80px;
+    border-radius: 10px;
+    color: white;
+    background-color: royalblue;
+    cursor: pointer;
+}
+
+.img-acc{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.user-list{
+    width: 420px;
+    height: 250px;
+    margin-top: 40px;
+    padding: 30px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: scroll;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-list::-webkit-scrollbar{
+    width: 0;
+}
+
+.link-user{
+    color: black;
+    text-decoration: none;
+}
+
+.user{
+    width: 350px;
+    height: 35px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #eee;
+    padding: 15px;
+    margin-bottom: 5px;
+}
+
+.user:hover{
+    background-color: #ddd;
+}
+
+.user .msg{
+    font-weight: bold;
+}
+
+.info-user{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.search{
+    width: 410px;
+    height: 50px;
+    margin-top: 30px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #eee;
+    margin-bottom: 15px;
+}
+
+.search-input{
+    padding: 10px;
+    outline: none;
+}
+
+.search-submit{
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    background-color: royalblue; 
+    cursor: pointer;
+}
+
+/* content area in main.php */
+
+.content{
+    width: 60vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(250px);
+}
+
+.post-area{
+    width: 60vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.post-img{
+    height: 200px;
+    background-color: white;
+}
+
+.post{
+    margin-top: 5vh;
+    width: 60vw;
+    height: auto;
+}
+
+.post-desc{
+    width: 60vw;
+    height: 10vh;
+    background-color: #eee;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-desc .img-user{
+    border-radius: 25px;
+    margin-left: 10px;
+}
+
+.post-desc .title{
+    width: 40vw;
+    text-align: center;
+}
+
+.post-desc .img-user{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.main-img{
+    width: 60vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.post-mark{
+    width:60vw;
+    height: 40px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.comment-btn{
+    border: none;
+    color: white;
+    padding: 10px;
+    background-color: royalblue;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.post-mark a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.like.active{
+    color: royalblue;
+}
+
+.dislike.active{
+    color: red;
+}
+
+.counter{
+    font-size: 0.7rem;
+}
+
+.comment-area{
+    background-color: #eee;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    overflow: scroll;
+    overflow-x: hidden;
+    display: none;
+}
+
+.comment-area.active{
+    display: block;
+}
+
+.comment-item{
+    width: 55vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ddd;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.comment-item .text{
+    width: 55vw;
+    height: auto;
+    font-size: 1rem;
+    padding: 10px 10px;
+}
+
+.comment-item .img-user{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.comment{
+    width: 60vw;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+
+}
+
+.comment .comment-text{
+    width: 500px;
+    border: none;
+    outline: none;
+    padding: 10px 5px;
+}
+
+.comment .submit-comment{
+    padding: 10px;
+    border: none;
+    background-color: royalblue;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Chat.php file styling */
+
+
+.info-chat-user{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+
+.chat-content{
+    width: 420px;
+    height: 520px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chat-area{
+    width: 370px;
+    height: 420px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 20px;
+    padding: 10px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-area::-webkit-scrollbar{
+    width:0;
+}
+
+.chat-area::-moz-scrollbar{
+    width:0;
+}
+
+.chat-write{
+    width: 420px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.chat-write .message{
+    width: 200px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid royalblue;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.chat-write .submit{
+    border:none;
+    color: white;
+    background-color: royalblue;
+    padding:10px;
+    border-radius: 0px 5px 5px 0px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.outgoing{
+    color: white;
+    background: royalblue;
+    border-radius: 5px 5px 0px 5px;
+    width: fit-content;
+    padding: 10px;
+}
+
+.incoming{
+    color: black;
+    background: #ddd;
+    border-radius: 5px 5px 5px 0px;
+    width: fit-content;
+    padding: 10px;
+    text-align: center;
+}
+
+.incoming-msg{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: last baseline;
+    gap: 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.outgoing-msg{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: last baseline;
+    gap: 5px;
+    margin: 10px 0px 10px 0px;
+    justify-content: right;
+}
+
+
+.incoming-msg .incoming-img{
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    transform: translateY(10px);
+} 
+
+
+/* ############## RWD ############# */ 
+
+@media only screen and (max-width: 600px) and (max-width: 800px)  {
+    body{
+        overflow-x: hidden;
+    }
+    .form{
+        width: 100%;
+        box-shadow: none;
+    }
+    .names{
+        width: 70vw;
+        justify-content: none;
+    }
+    .names input{
+        width: calc(34vw - 5px);
+    }
+    .form input:not(.names input,.submit){
+        width: 70vw;
+        
+    }
+    .header{
+        width: 100vw;
+        box-shadow:0px 10px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 0px;
+    }
+    .search{
+        box-shadow: none;
+    }
+    .user-list{
+        box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.1);
+        height: 50vh;
+        border-radius: 0px;
+        margin-top: 15vh;
+        width: 100vw;
+    }
+    .chat-area{
+        box-shadow: none;
+    }
+    .main{
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+    .side{
+        transform: translateX(0px);
+        width: 100vw;
+        position: relative;
+    }
+    .hide-btn{
+        display: none;
+    }
+    .content{
+        width: 100vw;
+        transform: translate(0px);
+    }
+    .post-area{
+        width: 100vw;
+    }
+    .post{
+        width: 100vw;
+    }
+    .post-desc{
+        width: 100vw;
+    }
+    .main-img{
+        width: 100vw;
+    }
+    .post-mark{
+        width: 100vw;
+    }
+    .comment-item{
+        width: 90vw;
+    }
+    .comment-item .text{
+        width: 80vw;
+    }
+    .comment{
+        width: 100vw;
+    }
+}
